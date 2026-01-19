@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99b420ba621c54498e1dc16a9564912, type: 3}
+  m_Name: DefaultGameStateSO
+  m_EditorClassIdentifier: 
+  _initialTurn: 1
+  _initialResources:
+  - _resource: {fileID: 11400000, guid: 8e06c15875c655d478b6b886a8628eed, type: 2}
+    _currentAmount: 20
+    _maxAmount: 100
+  - _resource: {fileID: 11400000, guid: 4fb022c7e11ab4340a57d3d4eb275f4a, type: 2}
+    _currentAmount: 20
+    _maxAmount: 100
+  - _resource: {fileID: 11400000, guid: cec0a8d74e0c7ec4e87e0e29ddb29bbf, type: 2}
+    _currentAmount: 0
+    _maxAmount: 3
