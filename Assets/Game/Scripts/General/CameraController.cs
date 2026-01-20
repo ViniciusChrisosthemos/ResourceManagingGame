@@ -12,7 +12,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _maxZoom;
     [SerializeField] private float _zoomStep = 0.1f;
 
-    private bool _isMovingCamera = false;
     private Vector3 _cameraPositionPivot;
     private Vector2 _mousePositionPivot;
 
@@ -27,10 +26,19 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if (_isMovingCamera)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            _cameraPositionPivot = _target.position;
+            _mousePositionPivot = new Vector2(Mouse.current.position.x.value, Mouse.current.position.y.value);
+        }
+
+        if (Mouse.current.leftButton.isPressed)
         {
             MoveCamera();
         }
+
+
+        ApplyZoom();
     }
 
     private void MoveCamera()
@@ -47,34 +55,18 @@ public class CameraController : MonoBehaviour
         _target.position = new Vector3(_cameraPositionPivot.x + posDiff.x, _target.position.y, _cameraPositionPivot.z + posDiff.y);
     }
 
+    private void ApplyZoom()
+    {
+        var scrollValue = Mouse.current.scroll.y.value;
+
+        if (scrollValue != 0) Zoom(scrollValue);
+    }
+
     private void Zoom(float value)
     {
         var step = _zoomStep * value * -1;
         _currentZoom = Mathf.Clamp(_currentZoom + step, _minZoom, _maxZoom);
 
         _camera.fieldOfView = _defaultFOV + _currentZoom;
-    }
-
-    private void OnMouseScroll(InputValue inputValue)
-    {
-        var scrollValue = inputValue.Get<Vector2>();
-
-        if (scrollValue.y != 0)
-        {
-            Zoom(scrollValue.y);
-        }
-    }
-
-    private void OnMouseLeftClick(InputValue inputValue)
-    {
-        _isMovingCamera = inputValue.isPressed;
-
-        _cameraPositionPivot = _target.position;
-        _mousePositionPivot = new Vector2(Mouse.current.position.x.value, Mouse.current.position.y.value);
-    }
-
-    private void OnMouseRightClick(InputValue inputValue)
-    {
-
     }
 }

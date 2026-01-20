@@ -10,12 +10,6 @@ public class UIHUDView : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private UIListDisplay _resourcesListDisplay;
     [SerializeField] private TextMeshProUGUI _txtTurn;
-    [SerializeField] private Button _btnPassTurn;
-
-    private void Awake()
-    {
-        _btnPassTurn.onClick.AddListener(_gameController.PassTurn);
-    }
 
     public void UpdateView(GameState gameState)
     {
