@@ -15,4 +15,9 @@ public class ResourceController
             _resources[resourceHolder.Resource.Type] = resourceHolder;
         }
     }
+
+    public List<ResourceHolder> GetAllResources()
+    {
+        return new List<ResourceHolder>(_resources.Values);
+    }
 }

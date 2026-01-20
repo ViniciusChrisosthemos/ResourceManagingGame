@@ -9,7 +9,8 @@ public class ResourceSO : ScriptableObject
         Stone,
         Food,
         Gold,
-        Steel
+        Steel,
+        Population
     }
 
     [SerializeField] private string _resourceName;

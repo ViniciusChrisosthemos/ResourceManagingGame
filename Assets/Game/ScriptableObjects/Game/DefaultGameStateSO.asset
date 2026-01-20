@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialTurn: 1
   _initialResources:
+  - _resource: {fileID: 11400000, guid: b674ce351e91c744d8800f099c86777c, type: 2}
+    _currentAmount: 20
+    _maxAmount: 50
+  - _resource: {fileID: 11400000, guid: cec0a8d74e0c7ec4e87e0e29ddb29bbf, type: 2}
+    _currentAmount: 20
+    _maxAmount: 50
   - _resource: {fileID: 11400000, guid: 8e06c15875c655d478b6b886a8628eed, type: 2}
     _currentAmount: 20
-    _maxAmount: 100
-  - _resource: {fileID: 11400000, guid: 4fb022c7e11ab4340a57d3d4eb275f4a, type: 2}
-    _currentAmount: 20
-    _maxAmount: 100
-  - _resource: {fileID: 11400000, guid: cec0a8d74e0c7ec4e87e0e29ddb29bbf, type: 2}
-    _currentAmount: 0
-    _maxAmount: 3
+    _maxAmount: 50

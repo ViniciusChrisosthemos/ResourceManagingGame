@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resourceName: Food
   _resourceType: 2
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: b75fd0082c25ed445811126c481af0fa, type: 3}
